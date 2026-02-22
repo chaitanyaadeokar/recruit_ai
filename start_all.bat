@@ -2,22 +2,22 @@
 echo Starting REDAI Services...
 
 echo Starting Backend API (Port 8080)...
-start "Backend API" cmd /k "cd backend && python upload_api.py"
+start "Backend API" cmd /k "uv run python backend/upload_api.py"
 
 echo Starting Shortlisting API (Port 5001)...
-start "Shortlisting API" cmd /k "cd agents/shortlisting && python api.py"
+start "Shortlisting API" cmd /k "uv run python agents/shortlisting/api.py"
 
 echo Starting Interview API (Port 5002)...
-start "Interview API" cmd /k "cd agents/interview && python api.py"
+start "Interview API" cmd /k "uv run python agents/interview/api.py"
 
 echo Starting Job Description Worker...
-start "JD Worker" cmd /k "cd agents/jobdescription && python main.py"
+start "JD Worker" cmd /k "uv run python agents/jobdescription/main.py"
 
 echo Starting settings API ...
-start "Settings API" cmd /k "cd backend && python settings_api.py"
+start "Settings API" cmd /k "uv run python backend/settings_api.py"
 
 echo Starting Analytics API (Port 5005)...
-start "Analytics API" cmd /k "cd backend && python analytics_api.py"
+start "Analytics API" cmd /k "uv run python backend/analytics_api.py"
 
 echo Starting Frontend...
 start "Frontend" cmd /k "cd front && npm run dev"
